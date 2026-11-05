@@ -101,69 +101,13 @@ Task → Detect missing capability → Generate new skill → Register & execute
 - Comprehensive logging and monitoring
 - Extensible skill system
 
-## Quick Start
-
-### Prerequisites
-
-- Docker & Docker Compose
-- Git
-- Optional: Python 3.11+, Node.js 18+
-
-### Local Development (5 minutes)
-
-```bash
-# Clone the repository
-git clone https://github.com/Luxion-Labs/axon.git
-cd axon
-
-# Start all services
-docker compose up --build
-
-# Wait for services to be healthy (~30 seconds)
-# Access the dashboard
-open http://localhost
-```
-
-Services will be available at:
-- **Frontend Dashboard**: http://localhost
-- **Backend API**: http://localhost:8000
-- **API Documentation**: http://localhost:8000/docs
-- **Database**: localhost:5432 (when running standalone)
-
-### Environment Configuration
-
-Create a `.env.local` file in the project root:
-
-```env
-# LLM Configuration
-GRADIENT_API_KEY=your_gradient_api_key
-GEMINI_API_KEY=your_gemini_api_key
-HUGGINGFACE_API_KEY=your_huggingface_api_key
-
-# Database
-DATABASE_URL=postgresql://postgres:password@postgres:5432/axon_db
-REDIS_URL=redis://redis:6379/0
-
-# Agent Endpoints (DigitalOcean Gradient ADK)
-PLANNER_AGENT_URL=https://agents.do-ai.run/your-planner-id/run
-RESEARCHER_AGENT_URL=https://agents.do-ai.run/your-researcher-id/run
-REASONING_AGENT_URL=https://agents.do-ai.run/your-reasoning-id/run
-BUILDER_AGENT_URL=https://agents.do-ai.run/your-builder-id/run
-
-# Platform Mode
-AXON_MODE=test  # Options: test, gemini, gradient, real
-TEST_MODE=false  # For development with mock LLMs
-
-# System Settings
-DEBUG=false
-LOG_LEVEL=INFO
-```
-
-See [ENV_CONFIGURATION_GUIDE.md](docs/ENV_CONFIGURATION_GUIDE.md) for detailed configuration options.
-
 ## Architecture
 
 ### System Diagram
+
+<details>
+<summary><b>Expand System Architecture & Data Flow</b></summary>
+<br/>
 
 ```
 ┌─────────────────────────────────────┐
@@ -252,6 +196,9 @@ External Services:
 10. Return Results & Update History
 ```
 
+<br/>
+</details>
+
 ## Project Structure
 
 ```
@@ -315,9 +262,22 @@ axon/
 └── README.md                 # This file
 ```
 
+<details>
+<summary><b>Expand Directory Layout & Codebase Organization</b></summary>
+<br/>
+
+
+
+<br/>
+</details>
+
 ## API Documentation
 
 ### Quick Reference
+
+<details>
+<summary><b>Expand Full API Reference & Endpoints</b></summary>
+<br/>
 
 | Endpoint | Method | Purpose |
 |----------|--------|---------|
@@ -348,9 +308,16 @@ When the backend is running, access interactive Swagger UI documentation:
 curl http://localhost:8000/docs
 ```
 
-## Development
+<br/>
+</details>
+
+## Development & Testing
 
 ### Backend Development
+
+<details>
+<summary><b>Expand Local Setup, Testing Modes & Quality Gates</b></summary>
+<br/>
 
 ```bash
 # Install dependencies
@@ -427,9 +394,16 @@ We follow:
 - **TypeScript**: ESLint config in [eslint.config.mjs](frontend/eslint.config.mjs)
 - **Commit messages**: Conventional commits format
 
+<br/>
+</details>
+
 ## Deployment
 
 ### Docker Compose (Local)
+
+<details>
+<summary><b>Expand Docker, DigitalOcean ADK & Production Checklist</b></summary>
+<br/>
 
 ```bash
 docker compose up --build
@@ -474,9 +448,16 @@ See [AGENTS_DEPLOYMENT_COMPLETE.md](AGENTS_DEPLOYMENT_COMPLETE.md) for full depl
 - [ ] Configure CORS for frontend domain
 - [ ] Run health checks: `curl https://your-domain/health`
 
+<br/>
+</details>
+
 ## Advanced Features
 
 ### Skill System
+
+<details>
+<summary><b>Expand Skill System, Vector Memory & Multi-LLM Providers</b></summary>
+<br/>
 
 Skills are Python modules that the system can execute. Two types:
 
@@ -520,6 +501,9 @@ Configure in environment:
 ```env
 AXON_LLM_PROVIDER=gradient  # Auto-route between providers
 ```
+
+<br/>
+</details>
 
 ## Monitoring & Observability
 
@@ -581,6 +565,10 @@ Please include:
 - **LLM Integration**: Gradient SDK, Google Gemini, HuggingFace, DigitalOcean Inference
 - **Monitoring**: Loguru
 
+<details>
+<summary><b>Expand Full Tech Stack Breakdown</b></summary>
+<br/>
+
 ### Frontend Stack
 - **Framework**: Next.js 15.1, React 19
 - **Language**: TypeScript 5.7
@@ -596,12 +584,19 @@ Please include:
 - **LLMs**: Multiple provider support
 - **Embeddings**: sentence-transformers
 
+<br/>
+</details>
+
 ## Troubleshooting
 
 ### Services won't start
 ```bash
 # Check logs
 docker compose logs -f
+
+<details>
+<summary><b>Expand Diagnostic Procedures & Runbooks</b></summary>
+<br/>
 
 # Ensure ports are available
 lsof -i :80 :3000 :8000 :5432 :6379
@@ -645,6 +640,9 @@ docker compose exec backend python utils/validate_setup.py
 docker compose exec backend python -c "import os; print({k: v[:10]+'...' if len(v) > 10 else v for k,v in os.environ.items() if 'AXON' in k or 'GRADIENT' in k})"
 ```
 
+<br/>
+</details>
+
 ## Performance & Scalability
 
 - **Async-first backend** handles 1000+ concurrent connections
@@ -672,10 +670,6 @@ docker compose exec backend python -c "import os; print({k: v[:10]+'...' if len(
 - [ ] Real-time collaborative features
 - [ ] Advanced monitoring dashboard
 - [ ] Cost tracking per agent/task
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Support & Community
 
