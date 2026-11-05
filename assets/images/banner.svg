@@ -1,66 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#080B11" />
-      <stop offset="50%" stop-color="#0F1420" />
-      <stop offset="100%" stop-color="#07090E" />
+    <linearGradient id="axon-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#04060E" />
+      <stop offset="50%" stop-color="#0A1224" />
+      <stop offset="100%" stop-color="#03050A" />
     </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="cyan-magenta" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00F2FE" />
-      <stop offset="50%" stop-color="#4FACFE" />
-      <stop offset="100%" stop-color="#00C6FF" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#EC4899" />
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="40%" r="55%">
-      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.16" />
-      <stop offset="60%" stop-color="#4FACFE" stop-opacity="0.04" />
-      <stop offset="100%" stop-color="#080B11" stop-opacity="0" />
+    <radialGradient id="axon-glow" cx="75%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.35" />
+      <stop offset="40%" stop-color="#3B82F6" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#04060E" stop-opacity="0" />
     </radialGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-width="0.5" stroke-opacity="0.04" />
+    <pattern id="axon-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#00F2FE" stroke-width="0.5" stroke-opacity="0.05" />
     </pattern>
   </defs>
 
-  <!-- Background -->
-  <rect width="1200" height="400" fill="url(#bg)" />
-  <rect width="1200" height="400" fill="url(#glow)" />
-  <rect width="1200" height="400" fill="url(#grid)" />
+  <rect width="1200" height="420" fill="url(#axon-bg)" />
+  <rect width="1200" height="420" fill="url(#axon-glow)" />
+  <rect width="1200" height="420" fill="url(#axon-grid)" />
 
-  <!-- Outer frame border -->
-  <rect x="20" y="20" width="1160" height="360" rx="16" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08" />
-  
-  <!-- Pill Tag -->
-  <g transform="translate(60, 60)">
-    <rect width="196" height="28" rx="14" fill="#00F2FE" fill-opacity="0.1" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.4" />
-    <circle cx="16" cy="14" r="4" fill="#00F2FE" />
-    <text x="28" y="18" fill="#00F2FE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.5">SELF-EVOLVING AI</text>
+  <rect x="20" y="20" width="1160" height="380" rx="14" fill="none" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.2" />
+
+  <!-- Self-Evolving Synaptic AST Tree Art (Right Side) -->
+  <g transform="translate(850, 210)">
+    <!-- Branching Neural AST Synapses -->
+    <path d="M 0 0 L -80 -80 M 0 0 L 80 -80 M 0 0 L -110 50 M 0 0 L 110 50" stroke="#00F2FE" stroke-width="2" stroke-opacity="0.6" />
+    <path d="M -80 -80 L -140 -120 M -80 -80 L -40 -130" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.5" />
+    <path d="M 80 -80 L 140 -120 M 80 -80 L 50 -135" stroke="#EC4899" stroke-width="1.5" stroke-opacity="0.5" />
+    <path d="M -110 50 L -160 80 M -110 50 L -90 120" stroke="#00F2FE" stroke-width="1.5" stroke-opacity="0.5" />
+    <path d="M 110 50 L 160 80 M 110 50 L 80 120" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.5" />
+
+    <!-- Central AXON Core Node -->
+    <circle cx="0" cy="0" r="35" fill="#0C1B33" stroke="#00F2FE" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="18" fill="#00F2FE" fill-opacity="0.2" stroke="#3B82F6" stroke-width="2" />
+    <circle cx="0" cy="0" r="8" fill="#FFFFFF" />
+
+    <!-- Synthesized Capability Nodes (Pills/Hexagons) -->
+    <g transform="translate(-80, -80)">
+      <circle cx="0" cy="0" r="14" fill="#08152B" stroke="#00F2FE" stroke-width="2" />
+      <text x="0" y="4" fill="#00F2FE" font-family="'SF Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">AST</text>
+    </g>
+    <g transform="translate(80, -80)">
+      <circle cx="0" cy="0" r="14" fill="#08152B" stroke="#EC4899" stroke-width="2" />
+      <text x="0" y="4" fill="#EC4899" font-family="'SF Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">JIT</text>
+    </g>
+    <g transform="translate(-110, 50)">
+      <circle cx="0" cy="0" r="14" fill="#08152B" stroke="#3B82F6" stroke-width="2" />
+      <text x="0" y="4" fill="#3B82F6" font-family="'SF Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">LLM</text>
+    </g>
+    <g transform="translate(110, 50)">
+      <circle cx="0" cy="0" r="14" fill="#08152B" stroke="#10B981" stroke-width="2" />
+      <text x="0" y="4" fill="#10B981" font-family="'SF Mono', monospace" font-size="9" font-weight="700" text-anchor="middle">SEC</text>
+    </g>
+
+    <!-- Pulsing Outer Hexagon Ring -->
+    <polygon points="0,-130 112,-65 112,65 0,130 -112,65 -112,-65" fill="none" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.25" stroke-dasharray="6 6" />
+
+    <text x="0" y="160" fill="#94A3B8" font-family="'SF Mono', monospace" font-size="11" letter-spacing="1" text-anchor="middle">DYNAMIC SKILL RECURSION</text>
   </g>
 
-  <!-- Title -->
-  <text x="60" y="165" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1.5">
-    AXON
-  </text>
-  
-  <!-- Accent Line Under Title -->
-  <rect x="60" y="185" width="80" height="4" rx="2" fill="url(#accent)" />
+  <!-- Content (Left Side) -->
+  <g transform="translate(70, 75)">
+    <rect width="240" height="30" rx="15" fill="#00F2FE" fill-opacity="0.12" stroke="#00F2FE" stroke-width="1" stroke-opacity="0.4" />
+    <circle cx="16" cy="15" r="4" fill="#00F2FE" />
+    <text x="28" y="19" fill="#00F2FE" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">SELF-EVOLVING AI PLATFORM</text>
 
-  <!-- Subtitle -->
-  <text x="60" y="235" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="400" letter-spacing="-0.2">
-    Self-evolving AI platform that identifies missing abilities and generates new skill modules at runtime.
-  </text>
+    <text x="0" y="85" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" letter-spacing="-1.5">
+      AXON
+    </text>
 
-  <!-- Footer Meta -->
-  <g transform="translate(60, 310)">
-    <rect width="160" height="32" rx="6" fill="#FFFFFF" fill-opacity="0.03" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08" />
-    <text x="14" y="21" fill="#64748B" font-family="'SF Mono', Menlo, Consolas, Monaco, monospace" font-size="12">ORG: LUXION-LABS</text>
-  </g>
+    <rect x="0" y="105" width="85" height="4" rx="2" fill="url(#cyan-magenta)" />
 
-  <g transform="translate(235, 310)">
-    <rect width="170" height="32" rx="6" fill="#FFFFFF" fill-opacity="0.03" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08" />
-    <text x="14" y="21" fill="#64748B" font-family="'SF Mono', Menlo, Consolas, Monaco, monospace" font-size="12">STATUS: PRODUCTION</text>
-  </g>
+    <text x="0" y="150" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="400" letter-spacing="-0.2">
+      Self-evolving AI platform generating and verifying new skill modules at runtime.
+    </text>
 
-  <g transform="translate(420, 310)">
-    <rect width="150" height="32" rx="6" fill="#FFFFFF" fill-opacity="0.03" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08" />
-    <text x="14" y="21" fill="#64748B" font-family="'SF Mono', Menlo, Consolas, Monaco, monospace" font-size="12">LICENSE: MIT</text>
+    <text x="0" y="180" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="400">
+      Autonomous capability expansion with sandboxed AST verification and zero downtime.
+    </text>
+
+    <g transform="translate(0, 240)">
+      <rect width="170" height="34" rx="8" fill="#FFFFFF" fill-opacity="0.03" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08" />
+      <text x="14" y="22" fill="#94A3B8" font-family="'SF Mono', monospace" font-size="11">CORE: FASTAPI + NEXT 15</text>
+
+      <rect x="185" y="0" width="180" height="34" rx="8" fill="#FFFFFF" fill-opacity="0.03" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08" />
+      <text x="199" y="22" fill="#94A3B8" font-family="'SF Mono', monospace" font-size="11">COMPILER: AST JIT</text>
+
+      <rect x="380" y="0" width="160" height="34" rx="8" fill="#FFFFFF" fill-opacity="0.03" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08" />
+      <text x="394" y="22" fill="#94A3B8" font-family="'SF Mono', monospace" font-size="11">SLA: 24H RESPONSE</text>
+    </g>
   </g>
 </svg>
